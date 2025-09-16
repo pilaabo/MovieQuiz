@@ -5,6 +5,8 @@ final class MovieQuizViewController: UIViewController {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var textLabel: UILabel!
     @IBOutlet private var counterLabel: UILabel!
+    @IBOutlet private var noButton: UIButton!
+    @IBOutlet private var yesButton: UIButton!
     
     // MARK: - Private properties
     private let questions: [QuizQuestion] = [
@@ -82,6 +84,10 @@ final class MovieQuizViewController: UIViewController {
         imageView.image = step.image
         textLabel.text = step.question
         counterLabel.text = step.questionNumber
+        
+        // Включаем кнопки после появления вопроса. Данный код будет необходим для всех вопросов после первого, так во время проверки ответа кнопки отключаются (см. строки 123-125)
+        noButton.isEnabled = true
+        yesButton.isEnabled = true
     }
     
     private func show(quiz result: QuizResultsViewModel) {
@@ -114,6 +120,10 @@ final class MovieQuizViewController: UIViewController {
     }
     
     private func checkAnswer(_ userAnswer: Bool) {
+        // Перед самой проверкой ответа выключаем кнопки, чтобы избежать неверное увеличение счетчика правильных ответов
+        noButton.isEnabled = false
+        yesButton.isEnabled = false
+        
         let correctAnswer = questions[currentQuestionIndex].correctAnswer
         let isCorrect = correctAnswer == userAnswer
         if isCorrect {
@@ -145,6 +155,7 @@ final class MovieQuizViewController: UIViewController {
     // MARK: - Actions
     @IBAction private func noButtonClicked(_ sender: UIButton) {
         checkAnswer(false)
+        
     }
     
     @IBAction private func yesButtonClicked(_ sender: UIButton) {

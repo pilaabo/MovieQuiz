@@ -44,6 +44,11 @@
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Htw-53-hk5" secondAttribute="height" multiplier="2:3" id="Jru-On-Rb0"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEO-ar-pxB" userLabel="Question Label">
                                         <rect key="frame" x="0.0" y="663.66666666666663" width="400" height="10.333333333333371"/>
@@ -93,7 +98,6 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="15"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="yesButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZFR-MZ-ZLH"/>
@@ -119,7 +123,9 @@
                     <connections>
                         <outlet property="counterLabel" destination="3i8-Rf-Y3V" id="qvx-Nc-MJG"/>
                         <outlet property="imageView" destination="Htw-53-hk5" id="KJ8-rR-3Oq"/>
+                        <outlet property="noButton" destination="JP0-LK-aa0" id="XBo-ve-cBL"/>
                         <outlet property="textLabel" destination="eEO-ar-pxB" id="nOa-D1-crY"/>
+                        <outlet property="yesButton" destination="ek1-B6-SM9" id="4qf-0c-KRe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
