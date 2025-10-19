@@ -13,6 +13,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
     private var questionFactory: QuestionFactoryProtocol?
     private var currentQuestion: QuizQuestion?
     private var alertPresenter: AlertPresenter?
+    private var statisticService: StatisticServiceProtocol = StatisticService()
     
     private var currentQuestionIndex = 0
     private var currentAnswers = 0
@@ -120,9 +121,23 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
         imageView.layer.borderColor = UIColor.clear.cgColor
         
         if currentQuestionIndex == questionsAmount - 1 {
+            let gameResult = GameResult(correct: currentAnswers, total: questionsAmount, date: Date())
+            statisticService.store(gameResult: gameResult)
+            
+            let gamesCount = statisticService.gamesCount
+            let bestGameCorrect = statisticService.bestGame.correct
+            let bestGameTotal = statisticService.bestGame.total
+            let bestGameDate = statisticService.bestGame.date.dateTimeString
+            let totalAccuracy = "\(String(format: "%.2f", statisticService.totalAccuracy))"
+            
             let resultViewModel = QuizResultsViewModel(
                 title: "Этот раунд окончен!",
-                text: "Ваш результат: \(currentAnswers)/\(questionsAmount)",
+                text: """
+                Ваш результат: \(currentAnswers)/\(questionsAmount)
+                Количество сыгранных квизов: \(gamesCount)
+                Рекорд: \(bestGameCorrect)/\(bestGameTotal) (\(bestGameDate))
+                Средняя точность: \(totalAccuracy)%
+                """,
                 buttonText: "Сыграть ещё раз"
             )
             show(quiz: resultViewModel)
