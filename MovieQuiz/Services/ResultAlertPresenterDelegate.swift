@@ -1,6 +1,6 @@
 import UIKit
 
-protocol AlertPresenterDelegate: AnyObject {
+protocol ResultAlertPresenterDelegate: AnyObject {
     func present(alert: UIAlertController)
     
     func startNewQuiz()

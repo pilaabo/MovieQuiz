@@ -1,6 +1,6 @@
 import UIKit
 
-final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, AlertPresenterDelegate {
+final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, ResultAlertPresenterDelegate {
     // MARK: - Outlets
     @IBOutlet weak private var imageView: UIImageView!
     @IBOutlet weak private var textLabel: UILabel!
@@ -12,7 +12,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
     private let questionsAmount: Int = 10
     private var questionFactory: QuestionFactoryProtocol?
     private var currentQuestion: QuizQuestion?
-    private var alertPresenter: AlertPresenter?
+    private var alertPresenter: ResultAlertPresenter?
     private var statisticService: StatisticServiceProtocol = StatisticService()
     
     private var currentQuestionIndex = 0
@@ -26,7 +26,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
         questonFactory.delegate = self
         self.questionFactory = questonFactory
         
-        let alertPresenter = AlertPresenter()
+        let alertPresenter = ResultAlertPresenter()
         alertPresenter.delegate = self
         self.alertPresenter = alertPresenter
         
