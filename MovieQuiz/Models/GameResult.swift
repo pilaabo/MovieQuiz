@@ -6,6 +6,6 @@ struct GameResult: Comparable {
     let date: Date
     
     static func < (lhs: GameResult, rhs: GameResult) -> Bool {
-        return lhs.correct < rhs.correct
+        lhs.correct < rhs.correct
     }
 }

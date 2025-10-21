@@ -1,6 +1,6 @@
 import UIKit
 
-class ResultAlertPresenter {
+final class ResultAlertPresenter {
     weak var delegate: ResultAlertPresenterDelegate?
     
     func setDelegate(_ delegate: ResultAlertPresenterDelegate) {

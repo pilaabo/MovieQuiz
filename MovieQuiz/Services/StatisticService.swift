@@ -1,6 +1,6 @@
 import Foundation
 
-class StatisticService: StatisticServiceProtocol {
+final class StatisticService: StatisticServiceProtocol {
     
     // MARK: - Storage
     private let storage: UserDefaults = .standard
