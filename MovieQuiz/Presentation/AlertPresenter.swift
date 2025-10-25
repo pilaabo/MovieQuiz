@@ -1,9 +1,9 @@
 import UIKit
 
-final class ResultAlertPresenter {
-    weak var delegate: ResultAlertPresenterDelegate?
-    
-    func setDelegate(_ delegate: ResultAlertPresenterDelegate) {
+final class AlertPresenter {
+    private weak var delegate: AlertPresenterDelegate?
+        
+    init(delegate: AlertPresenterDelegate? = nil) {
         self.delegate = delegate
     }
     
@@ -14,7 +14,7 @@ final class ResultAlertPresenter {
             preferredStyle: .alert
         )
         let action = UIAlertAction(title: result.buttonText, style: .default) { _ in
-            self.delegate?.startNewQuiz()
+            result.completion()
         }
         alert.addAction(action)
         delegate?.present(alert: alert)
