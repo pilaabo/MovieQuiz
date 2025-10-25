@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -77,10 +77,6 @@
 		E7CE7EE42EAD3EF400C759B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		E7CE7ED42EA9067C00C759B3 /* MovieQuizTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MovieQuizTests; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
 		AD1ABAAB2831907B00B3E448 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -125,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				AD1ABAB02831907B00B3E448 /* MovieQuiz */,
-				E7CE7ED42EA9067C00C759B3 /* MovieQuizTests */,
 				AD1ABAAF2831907B00B3E448 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -223,9 +218,6 @@
 			);
 			dependencies = (
 				E7CE7ED82EA9067C00C759B3 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				E7CE7ED42EA9067C00C759B3 /* MovieQuizTests */,
 			);
 			name = MovieQuizTests;
 			packageProductDependencies = (
