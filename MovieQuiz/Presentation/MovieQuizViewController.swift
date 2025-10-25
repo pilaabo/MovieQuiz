@@ -91,7 +91,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
             self.startNewQuiz()
         }
         
-        alertPresenter?.show(quiz: alertModel)
+        alertPresenter?.show(model: alertModel)
     }
             
     private func showAnswerResult(isCorrect: Bool) {
@@ -173,7 +173,7 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
                 
                 startNewQuiz()
             }
-        alertPresenter?.show(quiz: alertModel)
+        alertPresenter?.show(model: alertModel)
     }
     
     // MARK: - Actions
