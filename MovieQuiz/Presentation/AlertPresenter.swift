@@ -13,6 +13,10 @@ final class AlertPresenter {
             message: model.message,
             preferredStyle: .alert
         )
+        
+        // accessibilityIdentifier для UI тестов
+        alert.view.accessibilityIdentifier = "alert"
+
         let action = UIAlertAction(title: model.buttonText, style: .default) { _ in
             model.completion()
         }
