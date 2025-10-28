@@ -164,11 +164,13 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate, 
     
     private func showNetworkError(message: String) {
         hideLoadingIndicator() // скрываем индикатор загрузки
-        
+    
+        let errorTitle = "Ошибка"
+        let retryButtonTitle = "Попробовать ещё раз"
         let alertModel = AlertModel(
-            title: "Ошибка",
+            title: errorTitle,
             message: message,
-            buttonText: "Попробовать ещё раз") { [weak self] in
+            buttonText: retryButtonTitle) { [weak self] in
                 guard let self = self else { return }
                 
                 startNewQuiz()

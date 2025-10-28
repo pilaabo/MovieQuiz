@@ -3,7 +3,7 @@ import UIKit
 final class AlertPresenter {
     private weak var delegate: AlertPresenterDelegate?
         
-    init(delegate: AlertPresenterDelegate? = nil) {
+    init(delegate: AlertPresenterDelegate?) {
         self.delegate = delegate
     }
     
