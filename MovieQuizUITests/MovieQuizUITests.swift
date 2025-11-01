@@ -1,10 +1,3 @@
-//
-//  MovieQuizUITests.swift
-//  MovieQuizUITests
-//
-//  Created by Vladimir Generalov on 26.10.2025.
-//
-
 import XCTest
 
 final class MovieQuizUITests: XCTestCase {
@@ -60,7 +53,7 @@ final class MovieQuizUITests: XCTestCase {
         }
         
         sleep(3)
-        let alert = app.alerts["alert"]
+        let alert = app.alerts["Этот раунд окончен!"]
         let alertTitle = alert.label
         let alertButtonText = alert.buttons.firstMatch.label
         
@@ -75,7 +68,7 @@ final class MovieQuizUITests: XCTestCase {
             app.buttons["Yes"].tap()
         }
         
-        let alert = app.alerts["alert"]
+        let alert = app.alerts["Этот раунд окончен!"]
         alert.buttons.firstMatch.tap()
         
         sleep(3)
@@ -84,22 +77,5 @@ final class MovieQuizUITests: XCTestCase {
         
         XCTAssertFalse(alert.exists)
         XCTAssertEqual(indexLabelText, "1/10")
-    }
-    
-    @MainActor
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    @MainActor
-    func testLaunchPerformance() throws {
-        // This measures how long it takes to launch your application.
-        measure(metrics: [XCTApplicationLaunchMetric()]) {
-            XCUIApplication().launch()
-        }
     }
 }
