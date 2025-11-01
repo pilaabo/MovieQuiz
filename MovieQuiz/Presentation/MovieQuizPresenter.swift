@@ -84,7 +84,9 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
         guard let currentQuestion = currentQuestion else {
             return
         }
-
+        
+        viewController?.disableAnswerButtons()
+        
         let givenAnswer = isYes
 
         proceedWithAnswer(isCorrect: givenAnswer == currentQuestion.correctAnswer)
@@ -115,6 +117,7 @@ final class MovieQuizPresenter: QuestionFactoryDelegate {
         } else {
             self.switchToNextQuestion()
             questionFactory?.requestNextQuestion()
+            viewController?.enableAnswerButtons()
         }
     }
 

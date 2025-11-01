@@ -72,7 +72,17 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
     func hideLoadingIndicator() {
         activityIndicator.isHidden = true
     }
+    
+    func enableAnswerButtons() {
+        yesButton.isEnabled = true
+        noButton.isEnabled = true
+    }
 
+    func disableAnswerButtons() {
+        yesButton.isEnabled = false
+        noButton.isEnabled = false
+    }
+    
     func showNetworkError(message: String) {
         hideLoadingIndicator()
 
