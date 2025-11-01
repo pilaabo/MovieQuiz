@@ -68,13 +68,15 @@ final class MovieQuizUITests: XCTestCase {
             app.buttons["Yes"].tap()
         }
         
+        sleep(3)
+
         let alert = app.alerts["Этот раунд окончен!"]
         alert.buttons.firstMatch.tap()
         
         sleep(3)
         
         let indexLabelText = app.staticTexts["Index"].label
-        
+                
         XCTAssertFalse(alert.exists)
         XCTAssertEqual(indexLabelText, "1/10")
     }
