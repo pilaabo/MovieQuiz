@@ -1,7 +1,11 @@
 import Foundation
 
-final class MovieLoader: MovieLoading {
-    private let networkClient = NetworkClient()
+final class MoviesLoader: MovieLoading {
+    private let networkClient: NetworkRouting
+    
+    init(networkClient: NetworkRouting = NetworkClient()) {
+        self.networkClient = networkClient
+    }
     
     private var mostPopularMoviesUrl: URL {
         guard let url = URL(string: "https://tv-api.com/en/API/Top250Movies/k_zcuw1ytf") else {
